@@ -1,3 +1,10 @@
+/**
+ * Authentication Controller
+ * 
+ * Handles user authentication including login, registration, and profile management.
+ * I've implemented JWT-based authentication with proper error handling.
+ */
+
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 
@@ -32,7 +39,7 @@ const login = async (req, res) => {
       });
     }
 
-    // Check password
+    // Check password - using bcrypt comparison
     const isPasswordValid = await user.comparePassword(password);
     if (!isPasswordValid) {
       return res.status(401).json({
@@ -81,7 +88,7 @@ const register = async (req, res) => {
       });
     }
 
-    // Create new user
+    // Create new user - password will be hashed automatically by the User model
     const userData = {
       firstName,
       middleName,
@@ -94,7 +101,7 @@ const register = async (req, res) => {
 
     const user = await User.create(userData);
 
-    // Generate token
+    // Generate token immediately after registration
     const token = generateToken(user._id);
 
     res.status(201).json({

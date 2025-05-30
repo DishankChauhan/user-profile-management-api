@@ -2,6 +2,8 @@
 
 A comprehensive RESTful API for managing user profiles with role-based authentication and authorization. Built with Node.js, Express, MongoDB, and JWT authentication.
 
+> **Note**: This project was developed as part of a technical assessment to demonstrate backend development skills and best practices.
+
 ## 🚀 Features
 
 - **User Management**: Create, read, update, and delete user profiles
@@ -16,6 +18,7 @@ A comprehensive RESTful API for managing user profiles with role-based authentic
 
 ## 📋 Prerequisites
 
+Before you begin, ensure you have the following installed:
 - Node.js (v14 or higher)
 - MongoDB (v4.4 or higher)
 - npm or yarn
@@ -24,7 +27,7 @@ A comprehensive RESTful API for managing user profiles with role-based authentic
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/DishankChauhan/user-profile-management-api.git
    cd user-profile-management-api
    ```
 
@@ -38,7 +41,7 @@ A comprehensive RESTful API for managing user profiles with role-based authentic
    cp env.example .env
    ```
    
-   Edit `.env` file with your configuration:
+   Edit the `.env` file with your configuration:
    ```env
    PORT=3000
    NODE_ENV=development
@@ -58,7 +61,12 @@ A comprehensive RESTful API for managing user profiles with role-based authentic
    sudo systemctl start mongod
    ```
 
-5. **Run the application**
+5. **Create a default admin user (optional)**
+   ```bash
+   npm run create-admin
+   ```
+
+6. **Run the application**
    ```bash
    # Development mode with auto-reload
    npm run dev
@@ -69,7 +77,7 @@ A comprehensive RESTful API for managing user profiles with role-based authentic
 
 The API will be available at `http://localhost:3000`
 
-## 📚 API Documentation
+## 📋 API Documentation
 
 ### Base URL
 ```
@@ -529,6 +537,8 @@ The project includes comprehensive tests for:
 │   ├── auth.test.js          # Authentication tests
 │   ├── users.test.js         # User management tests
 │   └── setup.js              # Test configuration
+├── scripts/
+│   └── createAdmin.js        # Admin creation utility
 ├── .env.example              # Environment variables template
 ├── .gitignore                # Git ignore rules
 ├── jest.config.js            # Jest configuration
@@ -631,27 +641,29 @@ This project is licensed under the MIT License.
 
 ---
 
-## 👨‍💻 Development
+## 👨‍💻 About the Developer
 
-### Prerequisites for Development
-- Node.js v14+
-- MongoDB v4.4+
-- Git
+Hi! I'm **Dishank Chauhan**, and I built this API as part of a technical assessment. I focused on implementing clean, maintainable code with comprehensive testing and security best practices.
 
-### Development Workflow
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests for new features
-5. Ensure all tests pass
-6. Submit a pull request
+### What I Learned
+- Implementing JWT authentication from scratch
+- Designing role-based access control systems
+- Writing comprehensive test suites with Jest
+- Structuring Node.js applications for scalability
 
-### Code Style
-- Use meaningful variable and function names
-- Add comments for complex logic
-- Follow the existing code structure
-- Maintain consistent indentation
+### Development Approach
+- Started with designing the data model and API endpoints
+- Implemented authentication and authorization first
+- Added comprehensive input validation and error handling
+- Wrote tests throughout the development process
+- Focused on security best practices from the beginning
+
+Feel free to explore the code and reach out if you have any questions!
+
+### Connect with Me
+- GitHub: [@DishankChauhan](https://github.com/DishankChauhan)
+- LinkedIn: [Connect with me](https://linkedin.com/in/dishank-chauhan)
 
 ---
 
-For any questions or issues, please create an issue in the repository or contact the development team.
+*Built with ❤️ using Node.js, Express, and MongoDB*

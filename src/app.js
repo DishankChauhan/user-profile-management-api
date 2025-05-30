@@ -1,3 +1,13 @@
+/**
+ * User Profile Management API
+ * 
+ * Main application entry point
+ * Created by: Dishank Chauhan
+ * 
+ * This API provides user profile management with role-based access control.
+ * I've structured it to be modular and scalable with proper error handling.
+ */
+
 const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
@@ -18,7 +28,7 @@ connectDB();
 app.use(helmet());
 app.use(cors());
 
-// Rate limiting
+// Rate limiting - I've set this to prevent abuse
 const limiter = rateLimit({
   windowMs: parseInt(process.env.RATE_LIMIT_WINDOW_MS) || 15 * 60 * 1000, // 15 minutes
   max: parseInt(process.env.RATE_LIMIT_MAX_REQUESTS) || 100, // limit each IP to 100 requests per windowMs
@@ -30,7 +40,7 @@ app.use(limiter);
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
 
-// Health check endpoint
+// Health check endpoint - useful for monitoring
 app.get('/health', (req, res) => {
   res.status(200).json({
     status: 'OK',
