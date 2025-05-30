@@ -662,7 +662,7 @@ Feel free to explore the code and reach out if you have any questions!
 
 ### Connect with Me
 - GitHub: [@DishankChauhan](https://github.com/DishankChauhan)
-- LinkedIn: [Connect with me](https://linkedin.com/in/dishank-chauhan)
+- LinkedIn: [Connect with me](https://www.linkedin.com/in/dishank-chauhan-186853207/)
 
 ---
 
